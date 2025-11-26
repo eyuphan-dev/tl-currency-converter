@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "TL Çevirici",
+  "version": "1.0",
+  "description": "Sayfadaki para birimlerini TL'ye çevirir",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://www.tcmb.gov.tr/*", "https://api.exchangerate-api.com/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
